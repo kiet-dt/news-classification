@@ -109,15 +109,7 @@ class NewsNaiveBayes:
         X_val_vec = self.vectorizer.transform(X_val)
         X_test_vec = self.vectorizer.transform(X_test)
         
-        # Naive Bayes yêu cầu non-negative values, TF-IDF có thể có giá trị âm
-        # Chuyển đổi sang absolute hoặc shift để đảm bảo non-negative
-        # Thực tế TF-IDF thường không âm, nhưng để chắc chắn:
-        from scipy import sparse
-        if sparse.issparse(X_train_vec):
-            X_train_vec = X_train_vec.abs()
-            X_val_vec = X_val_vec.abs()
-            X_test_vec = X_test_vec.abs()
-        
+        # TF-IDF luôn trả về giá trị non-negative, phù hợp với Naive Bayes
         print(f"Feature matrix shape: {X_train_vec.shape}")
         
         # Train model
@@ -187,10 +179,7 @@ class NewsNaiveBayes:
         # Vectorize
         text_vec = self.vectorizer.transform([text])
         
-        # Đảm bảo non-negative cho Naive Bayes
-        from scipy import sparse
-        if sparse.issparse(text_vec):
-            text_vec = text_vec.abs()
+        # TF-IDF luôn trả về giá trị non-negative, phù hợp với Naive Bayes
         
         # Predict
         if return_proba:
