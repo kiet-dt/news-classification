@@ -38,16 +38,14 @@ ENV/
 .ipynb_checkpoints
 *.ipynb
 
-# Data files (quan trọng - không commit dữ liệu crawl)
-data/raw/*.parquet
-data/raw/*.csv
-data/raw/*.json
-data/processed/*.parquet
-data/processed/*.csv
-data/processed/*.json
-# Giữ lại thư mục nhưng ignore nội dung
-!data/raw/.gitkeep
-!data/processed/.gitkeep
+# Data files - Cho phép commit dữ liệu
+# (Đã bỏ ignore để có thể upload data lên GitHub)
+# data/raw/*.parquet
+# data/raw/*.csv
+# data/raw/*.json
+# data/processed/*.parquet
+# data/processed/*.csv
+# data/processed/*.json
 
 # Scrapy
 httpcache/
