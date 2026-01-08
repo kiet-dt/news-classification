@@ -41,7 +41,6 @@ class NewsLogisticRegression:
         self.model = LogisticRegression(
             max_iter=1000,
             random_state=random_state,
-            multi_class='multinomial',  # Cho multi-class classification
             solver='lbfgs',  # Solver phù hợp cho multi-class
             C=1.0  # Regularization strength
         )
