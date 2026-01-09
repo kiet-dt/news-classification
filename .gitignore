@@ -64,6 +64,11 @@ models/*.pth
 models/*.onnx
 models/checkpoints/
 
+# PhoBERT model files (rất lớn, không nên commit)
+models/saved/phobert/
+models/saved/phobert/**
+!models/saved/phobert/.gitkeep
+
 # Temporary files
 *.tmp
 *.temp
